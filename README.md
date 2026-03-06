@@ -229,3 +229,56 @@ Some insights derived from the analysis include:
 - Late deliveries increase the probability of customer returns.
 
 ---
+
+# Project Structure
+fulfilment-operations-analytics
+│
+├── data
+│ ├── orders.csv
+│ ├── fulfilment_events.csv
+│ ├── shipping.csv
+│ ├── returns.csv
+│ ├── hubs.csv
+│ └── sla.csv
+│
+├── sql
+│ └── fulfilment_analysis.sql
+│
+├── python
+│ └── data_generation.py
+│
+└── README.md
+
+---
+
+# Skills Demonstrated
+
+This project demonstrates practical skills in:
+
+- SQL data modeling
+- Data validation and cleaning
+- Operational analytics
+- Window functions and CTEs
+- KPI analysis
+- Business problem solving
+- Fulfilment and logistics analytics
+
+---
+
+# Future Enhancements
+
+Potential improvements include:
+
+- Interactive fulfilment dashboards (Tableau / Power BI)
+- Predictive models for SLA breach detection
+- Hub capacity forecasting
+- Logistics cost optimization models
+
+---
+
+# Author
+
+**Zaid Shaikh**
+
+Data Analyst  
+SQL • Tableau • Python • Operations Analytics
