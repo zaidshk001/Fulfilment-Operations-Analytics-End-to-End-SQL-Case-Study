@@ -90,4 +90,142 @@ Tracks order progression across operational stages.
 | status | Stage status |
 | hub_id | Processing hub |
 
-Pipeline stages:
+Pipeline stages: 
+Intake → QC → Packing → Shipping → Delivery
+
+---
+
+
+---
+
+## Hubs
+
+Stores fulfilment hub capacity data.
+
+| Column | Description |
+|------|------|
+| hub_id | Hub identifier |
+| hub_name | Hub name |
+| hub_country | Hub location |
+| capacity_per_day | Maximum orders processed per day |
+
+---
+
+## Shipping
+
+Contains logistics partner and shipping cost information.
+
+| Column | Description |
+|------|------|
+| shipping_partner | Delivery provider |
+| shipping_cost | Shipment cost |
+| shipping_zone | Delivery region |
+| weight_bucket | Shipment weight category |
+
+---
+
+## Returns
+
+Tracks returned orders and refund details.
+
+| Column | Description |
+|------|------|
+| return_reason | Reason for return |
+| refund_amount | Refunded value |
+
+---
+
+## SLA
+
+Defines stage-level SLA thresholds.
+
+| stage_name | sla_hours |
+|------|------|
+| Intake | SLA hours |
+| QC | SLA hours |
+| Packing | SLA hours |
+| Shipping | SLA hours |
+| Delivery | Delivery SLA |
+
+---
+
+# Data Validation & Cleaning
+
+Before performing analysis, extensive **data quality checks** were conducted.
+
+Validation steps included:
+
+- Null value detection
+- Missing stage timestamps
+- Negative stage durations
+- Duplicate stage records
+- Orphan records
+- Orders missing delivery stage
+- Hub capacity validation
+- Detection of overlapping stages
+
+Missing `stage_end_time` values were handled using **window functions** by imputing the start time of the next stage.
+
+A **materialized view (`fulfilment_events_clean`)** was created to store cleaned operational events for analysis.
+
+---
+
+# Key Business Questions Answered
+
+The project solves **45 operational KPI questions**, including:
+
+### Fulfilment Performance
+
+- Stage-wise average processing time
+- Overall order turnaround time
+- Queue time between fulfilment stages
+- Processing time variability across stages
+
+### SLA Monitoring
+
+- Delivery SLA breach rate
+- Stage-level SLA breach contribution
+- Monthly SLA breach trends
+- QC contribution to SLA failures
+
+### Hub Performance
+
+- Hub-level SLA breach rates
+- Daily throughput per hub
+- Capacity utilization
+- Operational stability across hubs
+
+### Operational Optimization
+
+- Bottleneck stage detection
+- Impact of QC delays on backlog
+- Scenario analysis for reducing QC time
+- Demand stress testing
+
+### Logistics & Cost Analysis
+
+- Shipping partner performance
+- Cost per on-time delivery
+- Shipping cost vs SLA performance
+- Biggest cost drivers in fulfilment pipeline
+
+### Returns Analysis
+
+- Overall return rate
+- Return probability vs delivery delays
+- Return rate by hub
+- Margin impact of returns
+
+---
+
+# Key Insights
+
+Some insights derived from the analysis include:
+
+- QC delays are a major contributor to downstream SLA breaches.
+- Certain hubs operate near capacity limits and exhibit higher TAT variance.
+- High hub utilization correlates with increased backlog formation.
+- Shipping costs significantly influence fulfilment margin efficiency.
+- Late deliveries increase the probability of customer returns.
+
+---
