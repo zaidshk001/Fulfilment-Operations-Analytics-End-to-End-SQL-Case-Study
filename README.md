@@ -1,0 +1,2 @@
+# Fulfilment-Operations-Analytics-End-to-End-SQL-Case-Study
+A comprehensive SQL-based analytics project analyzing fulfilment operations across hubs, focusing on SLA performance, operational bottlenecks, logistics costs, capacity utilization, and returns impact. The project answers 45 real-world business questions that simulate the work of a Business Analyst supporting fulfilment and logistics operations.
