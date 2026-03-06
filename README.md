@@ -25,26 +25,33 @@ The goal of this project is to analyze fulfilment operations and answer key busi
 # Tech Stack
 
 SQL (PostgreSQL)
+
 Python (Data generation & simulation)
+
 Window Functions
+
 CTEs
+
 Materialized Views
+
 Operational KPI modeling
 
 # Data Generation
+
 The dataset used in this project was synthetically generated using Python to simulate a realistic fulfilment pipeline.
+
 The Python script generated:
-Order data
+-- Order data
 
-Fulfilment stage events
+-- Fulfilment stage events
 
-Shipping details
+-- Shipping details
 
-Returns data
+-- Returns data
 
-SLA definitions
+-- SLA definitions
 
-Hub capacity information
+-- Hub capacity information
 
 This approach allowed the project to replicate real operational data scenarios, including:
 
@@ -58,7 +65,7 @@ SLA violations
 
 Capacity stress
 
-Data Model
+# Data Model
 
 The project uses the following core tables:
 
