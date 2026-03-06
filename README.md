@@ -230,27 +230,6 @@ Some insights derived from the analysis include:
 
 ---
 
-# Project Structure
-fulfilment-operations-analytics
-│
-├── data
-│ ├── orders.csv
-│ ├── fulfilment_events.csv
-│ ├── shipping.csv
-│ ├── returns.csv
-│ ├── hubs.csv
-│ └── sla.csv
-│
-├── sql
-│ └── fulfilment_analysis.sql
-│
-├── python
-│ └── data_generation.py
-│
-└── README.md
-
----
-
 # Skills Demonstrated
 
 This project demonstrates practical skills in:
