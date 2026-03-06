@@ -14,6 +14,7 @@ The project answers 45 real-world business questions covering fulfilment perform
 -- Which hubs are approaching capacity limits?
 -- How do logistics costs impact operational performance?
 -- What factors drive returns and customer dissatisfaction?
+
 -- This project demonstrates how SQL can be used to support data-driven operational decision-making.
 
 # Tech Stack
